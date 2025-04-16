@@ -10,6 +10,8 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /", controllers.Test)
 	mux.HandleFunc("GET /get", controllers.GetText)
+	mux.HandleFunc("GET /get_admin", controllers.GetTodoForAdmin)
+	mux.HandleFunc("GET /get_editor", controllers.GetTodoForEditor)
 
 	http.ListenAndServe(":8080", mux)
 }
