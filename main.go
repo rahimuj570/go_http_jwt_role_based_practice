@@ -9,6 +9,7 @@ import (
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /", controllers.Test)
+	mux.HandleFunc("POST /", controllers.Login)
 	mux.HandleFunc("GET /get", controllers.GetText)
 	mux.HandleFunc("GET /get_admin", controllers.GetTodoForAdmin)
 	mux.HandleFunc("GET /get_editor", controllers.GetTodoForEditor)
