@@ -16,5 +16,5 @@ func PurseJWT(bearrer_token string, w http.ResponseWriter) (any, any) {
 		return err, err
 	}
 	claims := token.Claims.(jwt.MapClaims)
-	return claims["id"], claims["role"]
+	return claims["id"].(float64), claims["role"].(string)
 }

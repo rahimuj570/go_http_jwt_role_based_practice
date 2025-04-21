@@ -14,7 +14,7 @@ func GenerateJWT(payload any, role enums.Role, w http.ResponseWriter) (string, e
 	claims := jwt.MapClaims{
 		"id":   payload,
 		"role": role,
-		"exp":  time.Now().Add(time.Minute * 3).Unix(),
+		"exp":  time.Now().Add(time.Minute * 30).Unix(),
 	}
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 
